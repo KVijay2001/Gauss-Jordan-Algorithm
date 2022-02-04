@@ -1,55 +1,5 @@
-
 #By Kisothan Suthakaran
-# DRAFT ALGORITHM
- 
-def gauss_jordan_three(matrix:list):
-
-    for n in range(1,3):
-        i=0
-        old=tuple(matrix[n][:])
-        for element2 in matrix[n]:
-            ratio=old[0]/matrix[0][0]
-            matrix[n][i]=(ratio*matrix[0][i])-element2
-            i+=1
-        
-    i=0
-    old=tuple(matrix[2][:])
-    for element2 in matrix[2]:
-        ratio=old[1]/matrix[1][1]
-        matrix[2][i]=(ratio*matrix[1][i])-element2
-        i+=1 
-
-
-
-    for n in range(1,3):
-        i=0
-        old=tuple(matrix[0][:])
-        for element2 in matrix[0]:
-            ratio=matrix[n][n]/old[n]
-            matrix[0][i]=(ratio*element2)-matrix[n][i]
-            i+=1    
-        
-        
-    i=0
-    old=tuple(matrix[1][:])
-    for element2 in matrix[1]:
-        ratio=matrix[2][2]/old[2]
-        matrix[1][i]=(ratio*element2)-matrix[2][i]
-        i+=1    
-
-
-    x=[]
-    i=0
-    for _ in range(3):
-        x.append(round(matrix[i][3]/matrix[i][i],3))
-        i+=1
-    
-    return(x)    
-
-
-#FINAL SIMPLIFIED ALGORITHM
 #FOLLOWING ALGORITHM WORKS FOR ANY SQUARE MATRICES
-
 
 from tabulate import tabulate
 
